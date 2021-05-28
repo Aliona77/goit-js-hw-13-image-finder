@@ -10,6 +10,11 @@ const refs = {
     galleryContainer: document.querySelector('gallery-container'),
     loadMoreBtn: document.querySelector('[data-action="load-more"]'),
 }
+
+// const loadMoreBtn = new LoadMoreBtn({
+//     selector: '[data-action = "load-more"]',
+//     hidden: true,
+// })
 const imageServise = new ImageServise();
 
 refs.searchForm.addEventListener('submit', onSearch);
@@ -32,4 +37,10 @@ function appendImagesMurkup(images) {
 }
 function clearImageContainer() {
     refs.gallery.innerHTML = '';
+}
+function scroll() {
+  window.scrollTo({
+    behavior: 'smooth',
+    top: document.documentElement.scrollHeight,
+  });
 }

@@ -16,13 +16,19 @@
   <body>
     <form class="search-form" id="search-form">
       <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
-      <button class="btn" type="submit">Search</button>
+      <button class="btn" type="submit">
+        <div class="spinner1 is-hidden" aria-hidden="true" role="status"></div>
+        <span>Search</span>
+      </button>
     </form>
     <ul class="gallery">
       <!-- Список <li> с карточками изображений -->
     </ul>
 
-    <button type="button" data-action="load-more">Load more</button>
+    <button type="button" data-action="load-more" class ="btn-more">
+      <div class="spinner" aria-hidden="true" role="status"></div>
+      <span class="label">Load more</span>
+    </button>
     <script src="./index.js"></script>
   </body>
 </html>

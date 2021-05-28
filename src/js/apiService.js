@@ -8,18 +8,19 @@ export default class ImageService{
         this.searchQuery = '';
         this.page = 1;
     }
-    fetchImages() {
+    async fetchImages() {
 
    
-    const URL = `${BASE_URL}?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KEY }`;
-        
-        return fetch(URL)
-            .then(response => response.json())
-            .then(data => {
-                this.incrementPage();
-
-                return data.hits;
-            });
+        const URL = `${BASE_URL}?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KEY}`;
+        try {
+            const response = await fetch(URL);
+            const responseJson = await response.json();
+            const data = await responseJson.hits;
+            this.incrementPage();
+            return data;
+        }catch (error) {
+      throw error;
+        }
     }
     incrementPage() {
         this.page += 1;
