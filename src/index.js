@@ -9,7 +9,7 @@ import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 
 const loadMoreBtn = new LoadMoreBtn({
-  selector: '.btn',
+   selector: '.btn',
   hidden: true,
 });
 
