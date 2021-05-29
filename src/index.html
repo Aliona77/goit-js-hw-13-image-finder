@@ -15,20 +15,26 @@
   </head>
   <body>
     <form class="search-form" id="search-form">
-      <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
-      <button class="btn" type="submit">
-        <div class="spinner1 is-hidden" aria-hidden="true" role="status"></div>
+      <input
+        type="text"
+        class="input"
+        name="query"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit" class="btn-search">
+        <div class="load is-hidden" aria-hidden="true" role="status"></div>
         <span>Search</span>
       </button>
     </form>
-    <ul class="gallery">
-      <!-- Список <li> с карточками изображений -->
-    </ul>
+    <div class="container"></div>
 
-    <button type="button" data-action="load-more" class ="btn-more">
-      <div class="spinner" aria-hidden="true" role="status"></div>
+    <button type="button" class="btn">
+      <div class="loader" aria-hidden="true" role="status"></div>
+
       <span class="label">Load more</span>
     </button>
+
     <script src="./index.js"></script>
   </body>
 </html>

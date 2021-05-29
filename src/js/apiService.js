@@ -5,17 +5,18 @@ const BASE_URL = 'https://pixabay.com/api';
 
 export default class ImageService{
     constructor() {
-        this.searchQuery = '';
+        this.searchValue = '';
         this.page = 1;
     }
     async fetchImages() {
-
+ console.log(this);
    
-        const URL = `${BASE_URL}?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KEY}`;
+        const URL = `${BASE_URL}?image_type=photo&orientation=horizontal&q=${this.searchValue}&page=${this.page}&per_page=12&key=${API_KEY}`;
         try {
             const response = await fetch(URL);
-            const responseJson = await response.json();
-            const data = await responseJson.hits;
+
+            const resJson = await response.json();
+            const data = await resJson.hits;
             this.incrementPage();
             return data;
         }catch (error) {
@@ -29,11 +30,11 @@ export default class ImageService{
         this.page = 1;
 }
 
-    get query() {
-        return this.searchQuery;  
+    get value() {
+        return this.searchValue;  
     }
-    set query(newQuery) {
-        this.searchQuery = newQuery;
+    set value(newValue) {
+        this.searchValue = newValue;
         
     }
 }
