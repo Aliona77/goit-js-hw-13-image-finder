@@ -16,7 +16,7 @@ body {
 .gallery {
   display: grid;
   grid-gap: 100px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   padding: 0;
   list-style: none;
 }
@@ -61,6 +61,7 @@ body {
   color: rgb(26, 24, 24);
   font-size: 15px;
   height: 32px;
+  padding: 6px 12px;
 }
 .loader {
   width: 20px;
@@ -69,7 +70,7 @@ body {
   margin-right: 10px;
   border: 3px solid #f0f0c1fa;
   border-top: 3px solid #131414e0;
-  border-radius: 40%;
+  border-radius: 50%;
 }
 @keyframes spin {
   0% {
