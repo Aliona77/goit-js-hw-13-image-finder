@@ -9,7 +9,6 @@ export default class LoadMoreBtn {
     const refs = {};
     refs.btn = document.querySelector(selector);
     refs.spinner = document.querySelector('.loader');
-    refs.spinner2 = document.querySelector('.load');
     refs.label = document.querySelector('.label');
 
     return refs;
@@ -19,7 +18,6 @@ export default class LoadMoreBtn {
     this.refs.btn.disabled = false;
     this.refs.label.textContent = 'Load more';
     this.refs.spinner.classList.add('is-hidden');
-    this.refs.spinner2.classList.add('is-hidden');
     
     
   }
@@ -28,7 +26,6 @@ export default class LoadMoreBtn {
     this.refs.btn.disabled = true;
     this.refs.label.textContent = 'Load...';
     this.refs.spinner.classList.remove('is-hidden');
-    this.refs.spinner2.classList.remove('is-hidden');
    
   }
 
