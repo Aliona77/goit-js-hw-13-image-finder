@@ -1,6 +1,6 @@
 
 const API_KEY = '21758242-df60cf310fb09062fe07e2a40';
-const BASE_URL = 'https://pixabay.com/api';
+const BASE_URL = 'https://pixabay.com/api/';
 
 
 export default class ImageService{
@@ -12,6 +12,7 @@ export default class ImageService{
  console.log(this);
    
         const URL = `${BASE_URL}?image_type=photo&orientation=horizontal&q=${this.searchValue}&page=${this.page}&per_page=12&key=${API_KEY}`;
+
         try {
             const response = await fetch(URL);
 
